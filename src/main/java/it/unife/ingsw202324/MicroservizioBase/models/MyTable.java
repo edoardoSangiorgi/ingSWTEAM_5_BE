@@ -17,8 +17,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MyTable {
+
     @Id /* Annotation per definire la primary key della tabella  */
     private Long id;
-    private String description;
+
+    private String name;
 
 }
