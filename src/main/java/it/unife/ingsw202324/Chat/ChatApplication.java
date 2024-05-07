@@ -1,4 +1,4 @@
-package it.unife.ingsw202324.MicroservizioBase;
+package it.unife.ingsw202324.Chat;
 
 
 

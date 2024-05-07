@@ -1,4 +1,4 @@
-package it.unife.ingsw202324.MicroservizioBase.services;
+package it.unife.ingsw202324.Chat.services;
 
 
         import org.springframework.boot.autoconfigure.SpringBootApplication;
