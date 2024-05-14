@@ -1,7 +1,7 @@
 package it.unife.ingsw202324.Chat.services;
 
 
-import it.unife.ingsw202324.Chat.models.Chat;
+import it.unife.ingsw202324.Chat.entities.Chat;
 import it.unife.ingsw202324.Chat.repositories.ChatRepository;
 import org.springframework.stereotype.Service;
 
@@ -19,14 +19,14 @@ public class ChatService {
 
 
     // -- SCRITTURA --
-    public void addChats(List<Chat> chats){
-        chatRepository.saveAll(chats);
+    public void addChat(Chat chat){
+        chatRepository.save(chat);
     }
 
 
     // -- ELIMINAZIONE --
-    public void deleteChats(List<Chat> chats){
-        chatRepository.deleteAll(chats);
+    public void deleteChat(Chat chat){
+        chatRepository.delete(chat);
     }
 
 

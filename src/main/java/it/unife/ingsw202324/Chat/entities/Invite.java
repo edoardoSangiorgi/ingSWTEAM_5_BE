@@ -1,4 +1,4 @@
-package it.unife.ingsw202324.Chat.models;
+package it.unife.ingsw202324.Chat.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,24 +7,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// --- M O D E L L O  D E L L A  T A B E L L A  C H A T ---
 @Entity
-@Table (name = "chat")
+@Table(name = "invite")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Chat {
+
+public class Invite {
 
     @Id
     private Long id;
 
-    private String name;
+    private Long senderId;
 
     private String type;
 
-    private String members;
+    private String text;
 
-    private String state;
-
-    private String info;
 }

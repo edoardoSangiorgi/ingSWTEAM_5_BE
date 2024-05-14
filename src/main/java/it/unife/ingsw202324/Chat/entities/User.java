@@ -1,4 +1,4 @@
-package it.unife.ingsw202324.Chat.models;
+package it.unife.ingsw202324.Chat.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

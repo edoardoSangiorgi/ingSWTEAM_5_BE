@@ -1,8 +1,8 @@
 package it.unife.ingsw202324.Chat.services;
 
 
-        import org.springframework.boot.autoconfigure.SpringBootApplication;
-        import org.springframework.web.client.RestClient;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.client.RestClient;
 
 
 @SpringBootApplication

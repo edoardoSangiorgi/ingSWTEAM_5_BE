@@ -1,6 +1,6 @@
 package it.unife.ingsw202324.Chat.repositories;
 
-import it.unife.ingsw202324.Chat.models.User;
+import it.unife.ingsw202324.Chat.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /* CLASSE CHE DEFINISCE IL REPOSITORY (TABELLA DEL DATABASE)  */

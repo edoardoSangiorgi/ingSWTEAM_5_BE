@@ -1,6 +1,6 @@
 package it.unife.ingsw202324.Chat.services;
 
-import it.unife.ingsw202324.Chat.models.User;
+import it.unife.ingsw202324.Chat.entities.User;
 import it.unife.ingsw202324.Chat.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,32 +12,28 @@ import java.util.List;
 @Service
 public class UserService {
 
-    // --- A T T R I B U T I ---
     private UserRepository userRepository;
 
 
-    // --- M E T O D I ---
-
-    // -- LETTURA --
+    // --- LETTURA ---
     public List<User> getAll() {
         return userRepository.findAll();
     }
 
 
-    // -- SALVATAGGIO --
+    // --- SCRITTURA ---
     public void addUsers(List<User> users) {
         userRepository.saveAll(users); // inserisci quell'oggetto nel DB
-
     }
 
 
-    // -- ELIMINAZIONE --
+    // --- ELIMINAZIONE ---
     public void deleteUsers(List<User> users){
         userRepository.deleteAll(users);
     }
 
 
-    // -- AGGIORNAMENTO --
+    // --- AGGIORNAMENTO ---
     public void update(User user){
         userRepository.save(user);
     }
