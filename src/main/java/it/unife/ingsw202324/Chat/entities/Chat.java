@@ -1,12 +1,13 @@
 package it.unife.ingsw202324.Chat.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+
+import java.util.*;
 
 // --- M O D E L L O  D E L L A  T A B E L L A  C H A T ---
 @Entity
@@ -17,16 +18,26 @@ import lombok.NoArgsConstructor;
 public class Chat {
 
     @Id
-    private Long id;
+    private Long chatId;
 
-    private String name;
+    private String chatName;
 
     private String type;
 
-    private String members;
-
     private String state;
 
-    private String info;
+
+    // --- CHAT-USER ---
+    // una chat può avere più utenti
+    @ElementCollection
+    private List<Long> memberIds;  // Lista di utenti da Mockoon
+
+
+    // --- CHAT-MESSAGE ---
+    // una chat può avere più messaggi
+    @OneToMany
+    private List<Message> messages;
+
+
 }
 

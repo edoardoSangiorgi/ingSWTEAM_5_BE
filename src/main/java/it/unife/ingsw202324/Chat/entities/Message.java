@@ -1,21 +1,35 @@
 package it.unife.ingsw202324.Chat.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Entity
+@Data
 @Table (name = "message")
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class Message {
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long messageId;
+    @Lob
+    private String content;
+    private Long senderId; // dall'API di Mockoon
 
-    private Long idChat;
+    @Column(name = "timestamp", nullable = false, updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime timestamp;
 
-    private Long idUser;
 
-    private String text;
+    // --- Relazione Message-Chat ---
+    // un messaggio è contenuto in una sola chat
+    @ManyToOne
+    @JoinColumn(name = "chat_id")
+    private Chat chat;
 
 }
