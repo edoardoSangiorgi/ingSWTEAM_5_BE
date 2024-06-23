@@ -11,12 +11,13 @@ import java.util.List;
 @NoArgsConstructor
 public class ChatDTO {
 
-    private Long chatId;
+    private Long id;
     private String chatName;
     private String type;
     private String state;
 
-    private List<Long> memberIds;
+    private List<UserDTO> members;
     private List<MessageDTO> messages;
+    private List<EventDTO> event;
 
 }

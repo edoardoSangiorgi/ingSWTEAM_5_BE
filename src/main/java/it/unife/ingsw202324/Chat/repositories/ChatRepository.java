@@ -9,6 +9,6 @@ import java.util.Optional;
 // --- CLASSE CHE DEFINISCE IL REPOSITORY DI CHAT ---
 public interface ChatRepository extends JpaRepository<Chat, Long> {
 
-    Optional<Chat> findByChatName(String chatName);
+    Optional<Chat> findByName(String chatName);
 
 }

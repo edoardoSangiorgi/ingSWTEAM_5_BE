@@ -18,25 +18,23 @@ import java.util.*;
 public class Chat {
 
     @Id
-    private Long chatId;
-
-    private String chatName;
-
+    private Long id;
+    private String name;
     private String type;
 
     private String state;
 
+    private Date creationDate;
 
-    // --- CHAT-USER ---
-    // una chat può avere più utenti
-    @ElementCollection
-    private List<Long> memberIds;  // Lista di utenti da Mockoon
+    @OneToOne
+    private Event event;
 
+    @ManyToMany
+    private List<User> members;
 
-    // --- CHAT-MESSAGE ---
-    // una chat può avere più messaggi
     @OneToMany
     private List<Message> messages;
+
 
 
 }

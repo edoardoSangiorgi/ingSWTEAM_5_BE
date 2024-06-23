@@ -8,15 +8,16 @@ import org.springframework.web.client.RestClient;
 @SpringBootApplication
 public class TemplateRestConsumer {
 
-    static String uriBaseMock = "http://localhost:3000/api/";
+    static String uriBaseMockUsers = "http://localhost:3000/users";
+    static String uriBaseMockEvents = "http://localhost:3000/events";
 
-    public static String callREST(String resourceName, String uriBase, boolean useMock) {
+    public static String callREST(String resourceName, String uriBase) {
         RestClient restClient = RestClient.create();
         /*
-        Creo uriBase per chiamare Mockoon se l'impostazione è useMock
-         */
-        if(useMock)
-            uriBase = uriBaseMock;
+            Creo uriBase per chiamare Mockoon se l'impostazione è useMock
+        */
+        if(uriBase.equals(uriBaseMockUsers)) uriBase = uriBaseMockUsers;
+        else if(uriBase.equals(uriBaseMockEvents)) uriBase = uriBaseMockEvents;
 
         System.out.println(uriBase+resourceName);
 

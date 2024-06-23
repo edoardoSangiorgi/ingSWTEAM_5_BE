@@ -2,7 +2,7 @@ spring:
   application:
     name: MicroservizioBase
 
-  # Il tastino qui permette di fare la connessione al Data Base
+  # Il tastino qui permette di fare la connessione alData Base
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: Strato_29

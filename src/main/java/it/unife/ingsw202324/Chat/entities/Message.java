@@ -9,27 +9,28 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table (name = "message")
+@Table (name = "MESSAGE")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Message {
 
+    /*
+        ATTRIBUTI:
+            - ID
+            - contenuto
+            - timestamp
+            - mittente --> mock
+            - chat di appartenenza
+     */
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long messageId;
-    @Lob
+    private Long id;
     private String content;
-    private Long senderId; // dall'API di Mockoon
-
-    @Column(name = "timestamp", nullable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime timestamp;
+    private Long chatId;
 
-
-    // --- Relazione Message-Chat ---
-    // un messaggio è contenuto in una sola chat
     @ManyToOne
-    @JoinColumn(name = "chat_id")
-    private Chat chat;
+    private User sender;
+
 
 }
